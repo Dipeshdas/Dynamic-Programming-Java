@@ -6,7 +6,9 @@ public class Solution {
 //     static int f(int k,ArrayList<Integer> nums,int dp[]){
 //         if(k<0) return 0;
 //         if(k==0) return nums.get(0);
-        
+	
+//         if(dp[k]!=-1) return dp[k];  
+	
 //         int incl=f(k-2,nums,dp)+nums.get(k);
 //         int excl=f(k-1,nums,dp)+0;
         
