@@ -13,24 +13,39 @@
 
 class Solution {
     
-    public int f(int n,int co[],int dp[]){
-        if(n==0) return co[0];
-        if(n==1) return co[1];
+    //Memoization
+    // public int f(int n,int co[],int dp[]){
+    //     if(n==0) return co[0];
+    //     if(n==1) return co[1];
 
-        if(dp[n]!=-1) return dp[n];
+    //     if(dp[n]!=-1) return dp[n];
 
-        return dp[n]=Math.min(f(n-1,co,dp),f(n-2,co,dp))+co[n];
+    //     return dp[n]=Math.min(f(n-1,co,dp),f(n-2,co,dp))+co[n];
 
-    }
+    // }
 
     public int minCostClimbingStairs(int[] cost) {
+
+        //Memoization
+        // int n=cost.length;
+        // int dp[]=new int[n+1];
+        // Arrays.fill(dp,-1);
+        // return Math.min(f(n-1,cost,dp),f(n-2,cost,dp));
+
+        //Tabulation
         int n=cost.length;
         int dp[]=new int[n+1];
         Arrays.fill(dp,-1);
-        return Math.min(f(n-1,cost,dp),f(n-2,cost,dp));
+        dp[0]=cost[0];
+        dp[1]=cost[1];
+
+        for(int i=2;i<n;i++){
+            dp[i]=cost[i]+Math.min(dp[i-1],dp[i-2]);
+        }
+        return Math.min(dp[n-1],dp[n-2]);
 
 
-
+        //Space optimization
         // int n=cost.length;
         // int prev2=cost[0];
         // int prev1=cost[1];
