@@ -40,9 +40,7 @@ public class Solution {
             prev2=prev;
             prev=cur;
         }
-        return prev;
-        
-        
+        return prev;     
     }
 
 }
