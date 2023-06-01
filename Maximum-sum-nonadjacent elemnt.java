@@ -14,8 +14,7 @@ public class Solution {
         
 //         return dp[k]=Math.max(incl,excl);
         
-//     }
-    
+//     } 
 	public static int maximumNonAdjacentSum(ArrayList<Integer> nums) {
 // 		int n=nums.size();
 //         int dp[]=new int[n+1];
@@ -49,7 +48,6 @@ public class Solution {
             prev2=prev;
             prev=ans;
         }
-        return prev;
-        
+        return prev; 
 	}
 }
